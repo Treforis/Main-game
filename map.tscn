@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://oxjhrnvv7mvh"]
+
+[ext_resource type="PackedScene" uid="uid://d3fdo8diq2mc1" path="res://Character/luffy__body.tscn" id="1_agumf"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pawro"]
+
+[node name="Map" type="Node2D"]
+
+[node name="Luffy _Body" parent="." instance=ExtResource("1_agumf")]
+position = Vector2(576, 319)
+
+[node name="Camera2D" type="Camera2D" parent="Luffy _Body"]
+position = Vector2(0, 8)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(576, 441)
+shape = SubResource("WorldBoundaryShape2D_pawro")
