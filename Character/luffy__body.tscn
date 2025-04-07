@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://d3fdo8diq2mc1"]
+[gd_scene load_steps=40 format=3 uid="uid://d3fdo8diq2mc1"]
 
 [ext_resource type="Script" path="res://Character/luffy__body.gd" id="1_nfyly"]
 [ext_resource type="Texture2D" uid="uid://ddxlmnpjlpb8h" path="res://Character/Game Boy Advance - One Piece - Monkey D Luffy.png" id="2_0rdqb"]
@@ -78,6 +78,42 @@ region = Rect2(363, 290, 36, 58)
 [sub_resource type="AtlasTexture" id="AtlasTexture_f6q2h"]
 atlas = ExtResource("2_0rdqb")
 region = Rect2(399, 290, 36, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el661"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(2, 452, 45, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g3tt"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(53, 452, 51, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty7eh"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(114, 452, 56, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kpeq"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(172, 450, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkyh1"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(224, 450, 55, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnb75"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(274, 450, 54, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa3cy"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(329, 450, 65, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqwhg"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(274, 450, 54, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w58rm"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(172, 450, 53, 56)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0xtwj"]
 atlas = ExtResource("2_0rdqb")
@@ -173,6 +209,38 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 0.63,
+"texture": SubResource("AtlasTexture_el661")
+}, {
+"duration": 0.63,
+"texture": SubResource("AtlasTexture_0g3tt")
+}, {
+"duration": 0.63,
+"texture": SubResource("AtlasTexture_ty7eh")
+}, {
+"duration": 0.63,
+"texture": SubResource("AtlasTexture_0kpeq")
+}, {
+"duration": 0.63,
+"texture": SubResource("AtlasTexture_fkyh1")
+}, {
+"duration": 0.63,
+"texture": SubResource("AtlasTexture_jnb75")
+}, {
+"duration": 0.63,
+"texture": SubResource("AtlasTexture_qa3cy")
+}, {
+"duration": 0.63,
+"texture": SubResource("AtlasTexture_mqwhg")
+}, {
+"duration": 0.63,
+"texture": SubResource("AtlasTexture_w58rm")
+}],
+"loop": true,
+"name": &"Punch",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 0.6,
 "texture": SubResource("AtlasTexture_0xtwj")
 }, {
@@ -199,14 +267,30 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qt7mq"]
 size = Vector2(29, 42)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70gnl"]
+
 [node name="Luffy _Body" type="CharacterBody2D"]
 script = ExtResource("1_nfyly")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5furh")
-animation = &"Jump"
-frame_progress = 0.590573
+animation = &"Punch"
+frame_progress = 0.794447
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 4)
 shape = SubResource("RectangleShape2D_qt7mq")
+
+[node name="Punchtimer" type="Timer" parent="."]
+wait_time = 1.25
+one_shot = true
+
+[node name="PunchHitbox" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PunchHitbox"]
+position = Vector2(-18, -2)
+shape = SubResource("RectangleShape2D_70gnl")
+
+[node name="Timer" type="Timer" parent="PunchHitbox"]
+one_shot = true
