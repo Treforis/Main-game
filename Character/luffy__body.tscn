@@ -79,41 +79,45 @@ region = Rect2(363, 290, 36, 58)
 atlas = ExtResource("2_0rdqb")
 region = Rect2(399, 290, 36, 58)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_el661"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tpdm"]
 atlas = ExtResource("2_0rdqb")
-region = Rect2(2, 452, 45, 50)
+region = Rect2(3, 457, 50, 45)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0g3tt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6qlk"]
 atlas = ExtResource("2_0rdqb")
-region = Rect2(53, 452, 51, 50)
+region = Rect2(53, 457, 50, 45)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ty7eh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnnq8"]
 atlas = ExtResource("2_0rdqb")
-region = Rect2(114, 452, 56, 50)
+region = Rect2(115, 457, 56, 45)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0kpeq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_aeh05"]
 atlas = ExtResource("2_0rdqb")
-region = Rect2(172, 450, 56, 56)
+region = Rect2(171, 457, 56, 45)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fkyh1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvxpy"]
 atlas = ExtResource("2_0rdqb")
-region = Rect2(224, 450, 55, 56)
+region = Rect2(224, 456, 56, 45)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jnb75"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmc34"]
 atlas = ExtResource("2_0rdqb")
-region = Rect2(274, 450, 54, 56)
+region = Rect2(277, 452, 48, 50)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qa3cy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hecju"]
 atlas = ExtResource("2_0rdqb")
-region = Rect2(329, 450, 65, 56)
+region = Rect2(331, 452, 63, 50)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mqwhg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yeiy"]
 atlas = ExtResource("2_0rdqb")
-region = Rect2(274, 450, 54, 56)
+region = Rect2(276, 452, 48, 50)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w58rm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn5bx"]
 atlas = ExtResource("2_0rdqb")
-region = Rect2(172, 450, 53, 56)
+region = Rect2(228, 452, 48, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6pjl"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(180, 452, 48, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0xtwj"]
 atlas = ExtResource("2_0rdqb")
@@ -209,32 +213,35 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.63,
-"texture": SubResource("AtlasTexture_el661")
+"duration": 0.65,
+"texture": SubResource("AtlasTexture_2tpdm")
 }, {
-"duration": 0.63,
-"texture": SubResource("AtlasTexture_0g3tt")
+"duration": 0.65,
+"texture": SubResource("AtlasTexture_l6qlk")
 }, {
-"duration": 0.63,
-"texture": SubResource("AtlasTexture_ty7eh")
+"duration": 0.65,
+"texture": SubResource("AtlasTexture_xnnq8")
 }, {
-"duration": 0.63,
-"texture": SubResource("AtlasTexture_0kpeq")
+"duration": 0.65,
+"texture": SubResource("AtlasTexture_aeh05")
 }, {
-"duration": 0.63,
-"texture": SubResource("AtlasTexture_fkyh1")
+"duration": 0.65,
+"texture": SubResource("AtlasTexture_gvxpy")
 }, {
-"duration": 0.63,
-"texture": SubResource("AtlasTexture_jnb75")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmc34")
 }, {
-"duration": 0.63,
-"texture": SubResource("AtlasTexture_qa3cy")
+"duration": 0.65,
+"texture": SubResource("AtlasTexture_hecju")
 }, {
-"duration": 0.63,
-"texture": SubResource("AtlasTexture_mqwhg")
+"duration": 0.65,
+"texture": SubResource("AtlasTexture_7yeiy")
 }, {
-"duration": 0.63,
-"texture": SubResource("AtlasTexture_w58rm")
+"duration": 0.65,
+"texture": SubResource("AtlasTexture_gn5bx")
+}, {
+"duration": 0.65,
+"texture": SubResource("AtlasTexture_f6pjl")
 }],
 "loop": true,
 "name": &"Punch",
@@ -267,15 +274,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qt7mq"]
 size = Vector2(29, 42)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_70gnl"]
-
 [node name="Luffy _Body" type="CharacterBody2D"]
 script = ExtResource("1_nfyly")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5furh")
 animation = &"Punch"
-frame_progress = 0.794447
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 4)
@@ -283,14 +287,4 @@ shape = SubResource("RectangleShape2D_qt7mq")
 
 [node name="Punchtimer" type="Timer" parent="."]
 wait_time = 1.25
-one_shot = true
-
-[node name="PunchHitbox" type="Area2D" parent="."]
-monitoring = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PunchHitbox"]
-position = Vector2(-18, -2)
-shape = SubResource("RectangleShape2D_70gnl")
-
-[node name="Timer" type="Timer" parent="PunchHitbox"]
 one_shot = true
