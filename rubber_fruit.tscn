@@ -7,11 +7,6 @@
 
 [node name="RubberFruit" type="Area2D"]
 script = ExtResource("1_av2nn")
-effect_type = null
-duration = null
-item_name = null
-description = null
-item_type = null
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(2.38419e-07, -2)

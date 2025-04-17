@@ -284,6 +284,8 @@ script = ExtResource("1_nfyly")
 sprite_frames = SubResource("SpriteFrames_5furh")
 animation = &"Punch"
 
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 4)
 shape = SubResource("RectangleShape2D_qt7mq")
