@@ -6,6 +6,11 @@ extends CharacterBody2D
 @onready var punch_shape = $PunchHitbox/CollisionShape2D
 @onready var body_hitbox = $CollisionShape2D
 
+var current_fruit_name = ""
+var current_fruit_type = ""
+var current_fruit_effect = ""
+var current_fruit_description = ""
+
 
 var punch_offset := Vector2(30, 0) # how far the punch reaches (adjust to match facing direction)
 
@@ -31,9 +36,15 @@ func _physics_process(delta: float) -> void:
 
 	# Punch input
 	if Input.is_action_just_pressed("punch") and punch_timer.is_stopped():
-		animated_sprite.play("Punch")
-		punch_timer.start()
-		punch_shape.disabled = false
+		if current_fruit_name == "Rubber Fruit":
+			animated_sprite.play("RPunch")
+			punch_timer.start()
+			punch_offset = Vector2(50,0)
+			punch_shape.disabled = false  
+		else:
+			animated_sprite.play("Punch")
+			punch_timer.start()
+			punch_shape.disabled = false
 
 		var flip = animated_sprite.flip_h
 		var offset = punch_offset
@@ -59,3 +70,18 @@ func _on_PunchTimer_timeout():
 	punch_hitbox.monitoring = false
 	punch_hitbox.visible = false
 	animated_sprite.stop()
+
+
+func pick_up_item(item):
+	current_fruit_name = item.item_name
+	current_fruit_type = item.item_type
+	current_fruit_effect = item.effect_type
+	current_fruit_description = item.description
+
+	# Store globally
+	GameData.current_fruit_name = item.item_name
+	GameData.current_fruit_type = item.item_type
+	GameData.current_fruit_effect = item.effect_type
+	GameData.current_fruit_description = item.description
+
+	print("Picked up: ", GameData.current_fruit_name)

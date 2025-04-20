@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cfuf2ltkcue45"]
 
-[ext_resource type="Script" path="res://rubber_fruit.gd" id="1_av2nn"]
+[ext_resource type="Script" path="res://Scripts/rubber_fruit.gd" id="1_av2nn"]
 [ext_resource type="Texture2D" uid="uid://b1qff67w3uqlw" path="res://Assets/Fruits/rubber_fruit.png" id="2_v1xqh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ceg4e"]
@@ -16,4 +16,4 @@ texture = ExtResource("2_v1xqh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ceg4e")
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
