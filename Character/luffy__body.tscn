@@ -1,7 +1,67 @@
-[gd_scene load_steps=52 format=3 uid="uid://d3fdo8diq2mc1"]
+[gd_scene load_steps=67 format=3 uid="uid://d3fdo8diq2mc1"]
 
 [ext_resource type="Script" path="res://Character/luffy__body.gd" id="1_nfyly"]
 [ext_resource type="Texture2D" uid="uid://ddxlmnpjlpb8h" path="res://Character/Game Boy Advance - One Piece - Monkey D Luffy.png" id="2_0rdqb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vplwf"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(7, 1679, 55, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_veint"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(62, 1679, 55, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fusk"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(117, 1679, 82, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fooc4"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(199, 1679, 86, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyrsb"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(371, 1679, 86, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihatu"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(285, 1679, 86, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sepj"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(117, 1679, 82, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88ce0"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(199, 1679, 86, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1oha"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(285, 1679, 86, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iha3r"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(371, 1679, 86, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgg2l"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(452, 1679, 62, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_028ew"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(519, 1679, 46, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x80v"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(565, 1679, 46, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di8e3"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(610, 1679, 45, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbeq4"]
+atlas = ExtResource("2_0rdqb")
+region = Rect2(655, 1679, 45, 73)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0l8cs"]
 atlas = ExtResource("2_0rdqb")
@@ -190,6 +250,56 @@ region = Rect2(213, 53, 42, 53)
 [sub_resource type="SpriteFrames" id="SpriteFrames_5furh"]
 animations = [{
 "frames": [{
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_vplwf")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_veint")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_1fusk")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_fooc4")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_oyrsb")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_ihatu")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_7sepj")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_88ce0")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_w1oha")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_iha3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgg2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_028ew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1x80v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di8e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbeq4")
+}],
+"loop": true,
+"name": &"GPunch",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0l8cs")
 }, {
@@ -364,15 +474,15 @@ script = ExtResource("1_nfyly")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5furh")
-animation = &"RPunch"
-frame_progress = 0.79757
+animation = &"GPunch"
+frame_progress = 0.274037
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 4)
 shape = SubResource("RectangleShape2D_qt7mq")
 
 [node name="Punchtimer" type="Timer" parent="."]
-wait_time = 1.25
+wait_time = 10.372
 one_shot = true
 
 [node name="PunchHitbox" type="Area2D" parent="."]
@@ -380,3 +490,6 @@ one_shot = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PunchHitbox"]
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_meont")
+
+[node name="AttackCooldownTimer" type="Timer" parent="."]
+wait_time = 14.79
