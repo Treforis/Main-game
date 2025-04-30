@@ -5,7 +5,8 @@ extends CharacterBody2D
 @onready var punch_hitbox = $PunchHitbox
 @onready var punch_shape = $PunchHitbox/CollisionShape2D
 @onready var body_hitbox = $CollisionShape2D
-@onready var attack_cooldown_timer = $AttackCooldownTimer
+@onready var attack_cooldown_timer = $ABTimer1
+@onready var ability_timer_2 = $ABTimer2
 
 var current_fruit_name = ""
 var current_fruit_type = ""
@@ -51,10 +52,6 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-func _on_PunchTimer_timeout():
-	punch_hitbox.monitoring = false
-	punch_hitbox.visible = false
-	animated_sprite.stop()
 
 func pick_up_item(item):
 	current_fruit_name = item.item_name
@@ -86,6 +83,7 @@ func rubber_gattling_punch() -> void:
 	animated_sprite.play("GPunch")
 	punch_timer.start(2)
 	punch_shape.disabled = false
+	attack_cooldown_timer.start()
 	await async_gattling_punch()
 
 func async_gattling_punch() -> void:
@@ -117,5 +115,5 @@ func update_punch_position():
 func use_rubber_moves():
 	if Input.is_action_just_pressed("punch") and punch_timer.is_stopped():
 		rubber_punch()
-	elif Input.is_action_just_pressed("gpunch") and punch_timer.is_stopped():
+	elif Input.is_action_just_pressed("gpunch") and punch_timer.is_stopped() and attack_cooldown_timer.is_stopped():
 		rubber_gattling_punch()
