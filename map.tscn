@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://oxjhrnvv7mvh"]
+[gd_scene load_steps=4 format=3 uid="uid://oxjhrnvv7mvh"]
 
 [ext_resource type="PackedScene" uid="uid://d3fdo8diq2mc1" path="res://Character/luffy__body.tscn" id="1_agumf"]
 [ext_resource type="PackedScene" uid="uid://cfuf2ltkcue45" path="res://rubber_fruit.tscn" id="2_8lh4o"]
+[ext_resource type="PackedScene" uid="uid://b3uyy7iycihu1" path="res://Assets/swords/sword.tscn" id="3_i55ms"]
 
 [node name="Map" type="Node2D"]
 
@@ -12,3 +13,6 @@ position = Vector2(574, 351)
 
 [node name="RubberFruit" parent="." instance=ExtResource("2_8lh4o")]
 position = Vector2(357, 343)
+
+[node name="Sword" parent="." instance=ExtResource("3_i55ms")]
+position = Vector2(402, 342)

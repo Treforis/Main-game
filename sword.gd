@@ -1,11 +1,14 @@
 extends Area2D
-
+@export var item_name: String = "Sword"
+@export var item_type: String = "weapon"
+@export var description: String = "Strong melee weapon"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	body_entered.connect(_on_body_entered)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_body_entered(body: Node2D) -> void:
+	if body.has_method("pick_up_item"):
+		body.pick_up_item(self)
+	queue_free()
+	

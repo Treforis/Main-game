@@ -4,6 +4,7 @@ extends Area2D
 @export var effect_type: String = "rubber"
 @export var description: String = "Grants rubber powers!"
 
+
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 

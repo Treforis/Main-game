@@ -13,6 +13,12 @@ var current_fruit_type = ""
 var current_fruit_effect = ""
 var current_fruit_description = ""
 
+var current_weapon_name = ""
+var current_weapon_type = ""
+var current_weapon_description = ""
+
+var current_item_slot = "" 
+
 var punch_offset := Vector2(30, 0)
 
 const SPEED = 300.0
@@ -34,9 +40,12 @@ func _physics_process(delta: float) -> void:
 		velocity.y = direction_y * SPEED
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
+	
+	item_slot()
+
 
 	
-	if current_fruit_name == "Rubber Fruit":
+	if current_fruit_name == "Rubber Fruit" and current_item_slot == "1":
 		use_rubber_moves()
 	elif Input.is_action_just_pressed("punch") and punch_timer.is_stopped():
 		normal_punch()
@@ -54,17 +63,28 @@ func _physics_process(delta: float) -> void:
 
 
 func pick_up_item(item):
-	current_fruit_name = item.item_name
-	current_fruit_type = item.item_type
-	current_fruit_effect = item.effect_type
-	current_fruit_description = item.description
+	if item.item_type == "fruit":
+		current_fruit_name = item.item_name
+		current_fruit_type = item.item_type
+		current_fruit_effect = item.effect_type
+		current_fruit_description = item.description
 
-	GameData.current_fruit_name = item.item_name
-	GameData.current_fruit_type = item.item_type
-	GameData.current_fruit_effect = item.effect_type
-	GameData.current_fruit_description = item.description
+		GameData.current_fruit_name = item.item_name
+		GameData.current_fruit_type = item.item_type
+		GameData.current_fruit_effect = item.effect_type
+		GameData.current_fruit_description = item.description
+		print("Picked up: ", GameData.current_fruit_name)
 
-	print("Picked up: ", GameData.current_fruit_name)
+	elif item.item_type == "weapon":
+		current_weapon_name = item.item_name
+		current_weapon_type = item.item_type
+		current_weapon_description = item.description
+
+		GameData.current_weapon_name = item.item_name
+		GameData.current_weapon_type = item.item_type
+		GameData.current_weapon_description = item.description
+
+		print("Picked up: ", GameData.current_weapon_name)
 
 func normal_punch():
 	animated_sprite.play("Punch")
@@ -117,3 +137,11 @@ func use_rubber_moves():
 		rubber_punch()
 	elif Input.is_action_just_pressed("gpunch") and punch_timer.is_stopped() and attack_cooldown_timer.is_stopped():
 		rubber_gattling_punch()
+
+func item_slot():
+	if Input.is_action_just_pressed("item_slot_1"):
+		current_item_slot = "1"
+		print(current_item_slot)
+	elif Input.is_action_just_pressed("item_slot_2"):
+		current_item_slot = "2"
+		print(current_item_slot)
