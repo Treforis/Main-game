@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameData="*res://Scripts/GameData.gd"
-LuffyBody="*res://Character/luffy__body.tscn"
 
 [input]
 
