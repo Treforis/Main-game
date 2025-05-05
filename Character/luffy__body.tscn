@@ -1,7 +1,8 @@
-[gd_scene load_steps=75 format=3 uid="uid://d3fdo8diq2mc1"]
+[gd_scene load_steps=79 format=3 uid="uid://d3fdo8diq2mc1"]
 
 [ext_resource type="Script" path="res://Character/luffy__body.gd" id="1_nfyly"]
 [ext_resource type="Texture2D" uid="uid://ddxlmnpjlpb8h" path="res://Character/Game Boy Advance - One Piece - Monkey D Luffy.png" id="2_0rdqb"]
+[ext_resource type="PackedScene" uid="uid://b3uyy7iycihu1" path="res://Assets/swords/sword.tscn" id="3_icrv5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vplwf"]
 atlas = ExtResource("2_0rdqb")
@@ -530,13 +531,72 @@ size = Vector2(29, 42)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_meont"]
 size = Vector2(13, 14)
 
+[sub_resource type="Animation" id="Animation_bfndh"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-1.25664, -2.30383, -1.25664]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sword:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-25, -11), Vector2(-33, 6), Vector2(-25, -11)]
+}
+
+[sub_resource type="Animation" id="Animation_4gpgi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.25664]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sword:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-25, -11)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l73vp"]
+_data = {
+"RESET": SubResource("Animation_4gpgi"),
+"new_animation": SubResource("Animation_bfndh")
+}
+
 [node name="Luffy _Body" type="CharacterBody2D"]
 script = ExtResource("1_nfyly")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5furh")
-animation = &"RKick"
-frame_progress = 0.831688
+animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 4)
@@ -559,3 +619,13 @@ one_shot = true
 [node name="ABTimer2" type="Timer" parent="."]
 
 [node name="ABTimer3" type="Timer" parent="."]
+
+[node name="Sword" parent="." instance=ExtResource("3_icrv5")]
+position = Vector2(-25, -11)
+rotation = -1.25664
+scale = Vector2(1.055, 1.055)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l73vp")
+}

@@ -7,6 +7,8 @@ extends CharacterBody2D
 @onready var body_hitbox = $CollisionShape2D
 @onready var attack_cooldown_timer = $ABTimer1
 @onready var ability_timer_2 = $ABTimer2
+@onready var sword = $Sword
+
 
 var current_fruit_name = ""
 var current_fruit_type = ""
@@ -17,7 +19,7 @@ var current_weapon_name = ""
 var current_weapon_type = ""
 var current_weapon_description = ""
 
-var current_item_slot = "" 
+var current_item_slot = "1" 
 
 var punch_offset := Vector2(30, 0)
 
@@ -42,6 +44,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
 	item_slot()
+	sword_activation()
 
 
 	
@@ -76,6 +79,7 @@ func pick_up_item(item):
 		print("Picked up: ", GameData.current_fruit_name)
 
 	elif item.item_type == "weapon":
+		
 		current_weapon_name = item.item_name
 		current_weapon_type = item.item_type
 		current_weapon_description = item.description
@@ -145,3 +149,9 @@ func item_slot():
 	elif Input.is_action_just_pressed("item_slot_2"):
 		current_item_slot = "2"
 		print(current_item_slot)
+
+func sword_activation():
+	if current_weapon_name == "Sword" and current_item_slot != "1":
+		sword.visible = true
+	else:
+		sword.visible = false
