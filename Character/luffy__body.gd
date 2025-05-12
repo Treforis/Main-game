@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var attack_cooldown_timer = $ABTimer1
 @onready var ability_timer_2 = $ABTimer2
 @onready var sword = $Sword
+@onready var animation_player = $AnimationPlayer
 
 
 var current_fruit_name = ""
@@ -50,9 +51,10 @@ func _physics_process(delta: float) -> void:
 	
 	if current_fruit_name == "Rubber Fruit" and current_item_slot == "1":
 		use_rubber_moves()
+	elif current_weapon_name == "Sword" and current_item_slot == "2":
+		sword_moves()
 	elif Input.is_action_just_pressed("punch") and punch_timer.is_stopped():
 		normal_punch()
-
 	if punch_timer.is_stopped():
 		punch_shape.disabled = true
 		punch_hitbox.position = Vector2(0, 0)
@@ -110,6 +112,10 @@ func rubber_gattling_punch() -> void:
 	attack_cooldown_timer.start()
 	await async_gattling_punch()
 
+func sword_attack():
+	animation_player.play("new_animation")
+	punch_timer.start(1)
+	
 func async_gattling_punch() -> void:
 	for i in range(7):
 		var flip = animated_sprite.flip_h
@@ -141,6 +147,10 @@ func use_rubber_moves():
 		rubber_punch()
 	elif Input.is_action_just_pressed("gpunch") and punch_timer.is_stopped() and attack_cooldown_timer.is_stopped():
 		rubber_gattling_punch()
+
+func sword_moves():
+	if Input.is_action_just_pressed("punch") and punch_timer.is_stopped():
+		sword_attack()
 
 func item_slot():
 	if Input.is_action_just_pressed("item_slot_1"):
