@@ -24,6 +24,8 @@ var current_item_slot = "1"
 
 var punch_offset := Vector2(30, 0)
 
+var last_faced_right := true
+
 const SPEED = 300.0
 
 func _ready():
@@ -47,12 +49,22 @@ func _physics_process(delta: float) -> void:
 	item_slot()
 	sword_activation()
 
-
+	if velocity.x > 0:
+		animation_player.play("Right_idle")
+		last_faced_right = true
+	elif velocity.x < 0:
+		animation_player.play("Left_idle")
+		last_faced_right = false
+	
 	
 	if current_fruit_name == "Rubber Fruit" and current_item_slot == "1":
 		use_rubber_moves()
-	elif current_weapon_name == "Sword" and current_item_slot == "2":
-		sword_moves()
+	elif current_weapon_name == "Sword" and current_item_slot == "2" and Input.is_action_just_pressed("punch") and punch_timer.is_stopped():
+		if velocity.x > 0:
+			animation_player.play("Attack_right")
+		elif velocity.x <= 0:
+			animation_player.play("Attack_left")
+			punch_timer.start(1)
 	elif Input.is_action_just_pressed("punch") and punch_timer.is_stopped():
 		normal_punch()
 	if punch_timer.is_stopped():
@@ -61,6 +73,7 @@ func _physics_process(delta: float) -> void:
 		if velocity.x != 0 or velocity.y != 0:
 			animated_sprite.play("Running")
 			animated_sprite.flip_h = velocity.x > 0
+			
 		else:
 			animated_sprite.play("Idle")
 
@@ -112,10 +125,7 @@ func rubber_gattling_punch() -> void:
 	attack_cooldown_timer.start()
 	await async_gattling_punch()
 
-func sword_attack():
-	animation_player.play("new_animation")
-	punch_timer.start(1)
-	
+
 func async_gattling_punch() -> void:
 	for i in range(7):
 		var flip = animated_sprite.flip_h
@@ -148,9 +158,6 @@ func use_rubber_moves():
 	elif Input.is_action_just_pressed("gpunch") and punch_timer.is_stopped() and attack_cooldown_timer.is_stopped():
 		rubber_gattling_punch()
 
-func sword_moves():
-	if Input.is_action_just_pressed("punch") and punch_timer.is_stopped():
-		sword_attack()
 
 func item_slot():
 	if Input.is_action_just_pressed("item_slot_1"):
