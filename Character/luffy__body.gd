@@ -60,9 +60,9 @@ func _physics_process(delta: float) -> void:
 	if current_fruit_name == "Rubber Fruit" and current_item_slot == "1":
 		use_rubber_moves()
 	elif current_weapon_name == "Sword" and current_item_slot == "2" and Input.is_action_just_pressed("punch") and punch_timer.is_stopped():
-		if velocity.x > 0:
+		if velocity.x >= 0:
 			animation_player.play("Attack_right")
-		elif velocity.x <= 0:
+		elif velocity.x < 0:
 			animation_player.play("Attack_left")
 			punch_timer.start(1)
 	elif Input.is_action_just_pressed("punch") and punch_timer.is_stopped():
