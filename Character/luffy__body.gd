@@ -31,6 +31,8 @@ const SPEED = 300.0
 func _ready():
 	punch_hitbox.monitoring = false
 	punch_hitbox.visible = false 
+	GameData.player_ref = self
+	
 
 func _physics_process(delta: float) -> void:
 	var direction_x := Input.get_axis("left", "right")

@@ -531,8 +531,8 @@ size = Vector2(29, 42)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_meont"]
 size = Vector2(13, 14)
 
-[sub_resource type="Animation" id="Animation_4gpgi"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_bfndh"]
+resource_name = "Attack_left"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -540,10 +540,10 @@ tracks/0/path = NodePath("Sword:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.366667, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [-1.25664]
+"values": [-1.25664, -2.30383, -1.25664]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -552,37 +552,10 @@ tracks/1/path = NodePath("Sword:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.366667, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-25, -11)]
-}
-
-[sub_resource type="Animation" id="Animation_rc8ev"]
-resource_name = "Right_idle"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sword:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(28.65, -11)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sword:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.195477]
+"values": [Vector2(-25, -11), Vector2(-33, 6), Vector2(-25, -11)]
 }
 
 [sub_resource type="Animation" id="Animation_mts7k"]
@@ -639,8 +612,8 @@ tracks/1/keys = {
 "values": [-1.25664]
 }
 
-[sub_resource type="Animation" id="Animation_bfndh"]
-resource_name = "Attack_left"
+[sub_resource type="Animation" id="Animation_4gpgi"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -648,10 +621,10 @@ tracks/0/path = NodePath("Sword:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.366667, 0.833333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-1.25664, -2.30383, -1.25664]
+"values": [-1.25664]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -660,10 +633,37 @@ tracks/1/path = NodePath("Sword:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.366667, 0.833333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-25, -11), Vector2(-33, 6), Vector2(-25, -11)]
+"values": [Vector2(-25, -11)]
+}
+
+[sub_resource type="Animation" id="Animation_rc8ev"]
+resource_name = "Right_idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(28.65, -11)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sword:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.195477]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l73vp"]
