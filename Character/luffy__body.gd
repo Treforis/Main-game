@@ -24,7 +24,6 @@ var current_item_slot = "1"
 
 var punch_offset := Vector2(30, 0)
 
-var last_faced_right := true
 
 const SPEED = 300.0
 
@@ -51,22 +50,10 @@ func _physics_process(delta: float) -> void:
 	item_slot()
 	sword_activation()
 
-	if velocity.x > 0:
-		animation_player.play("Right_idle")
-		last_faced_right = true
-	elif velocity.x < 0:
-		animation_player.play("Left_idle")
-		last_faced_right = false
 	
 	
 	if current_fruit_name == "Rubber Fruit" and current_item_slot == "1":
 		use_rubber_moves()
-	elif current_weapon_name == "Sword" and current_item_slot == "2" and Input.is_action_just_pressed("punch") and punch_timer.is_stopped():
-		if velocity.x >= 0:
-			animation_player.play("Attack_right")
-		elif velocity.x < 0:
-			animation_player.play("Attack_left")
-			punch_timer.start(1)
 	elif Input.is_action_just_pressed("punch") and punch_timer.is_stopped():
 		normal_punch()
 	if punch_timer.is_stopped():
@@ -170,7 +157,10 @@ func item_slot():
 		print(current_item_slot)
 
 func sword_activation():
-	if current_weapon_name == "Sword" and current_item_slot != "1":
-		sword.visible = true
+	if is_instance_valid(sword):
+		if current_weapon_name == "Sword" and current_item_slot != "1":
+			sword.visible = true
+		else:
+			sword.visible = false
 	else:
-		sword.visible = false
+		print("Sword node is no longer valid (possibly freed).")
