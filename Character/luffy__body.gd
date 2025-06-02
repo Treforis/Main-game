@@ -162,5 +162,3 @@ func sword_activation():
 			sword.visible = true
 		else:
 			sword.visible = false
-	else:
-		print("Sword node is no longer valid (possibly freed).")

@@ -9,6 +9,6 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.has_method("pick_up_item"):
+	if body == GameData.player_ref and body.has_method("pick_up_item"):
 		body.pick_up_item(self)
-	queue_free()
+		queue_free()
