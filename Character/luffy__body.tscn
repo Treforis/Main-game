@@ -1,8 +1,9 @@
-[gd_scene load_steps=82 format=3 uid="uid://d3fdo8diq2mc1"]
+[gd_scene load_steps=83 format=3 uid="uid://d3fdo8diq2mc1"]
 
 [ext_resource type="Script" path="res://Character/luffy__body.gd" id="1_nfyly"]
 [ext_resource type="Texture2D" uid="uid://ddxlmnpjlpb8h" path="res://Character/Game Boy Advance - One Piece - Monkey D Luffy.png" id="2_0rdqb"]
 [ext_resource type="PackedScene" uid="uid://b3uyy7iycihu1" path="res://Assets/swords/sword.tscn" id="3_icrv5"]
+[ext_resource type="Script" path="res://Character/punch_hitbox.gd" id="3_wdi02"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vplwf"]
 atlas = ExtResource("2_0rdqb")
@@ -691,6 +692,7 @@ wait_time = 10.372
 one_shot = true
 
 [node name="PunchHitbox" type="Area2D" parent="."]
+script = ExtResource("3_wdi02")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PunchHitbox"]
 position = Vector2(0, -3)

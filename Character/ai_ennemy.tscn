@@ -15,27 +15,3 @@ texture = ExtResource("2_ccnsq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jmacl")
-
-[node name="RayRight" type="RayCast2D" parent="."]
-target_position = Vector2(30, 0)
-
-[node name="RayLeft" type="RayCast2D" parent="."]
-target_position = Vector2(-30, 0)
-
-[node name="RayDown" type="RayCast2D" parent="."]
-target_position = Vector2(0, 30)
-
-[node name="RayUp" type="RayCast2D" parent="."]
-target_position = Vector2(0, -30)
-
-[node name="RayUpRight" type="RayCast2D" parent="."]
-target_position = Vector2(30, -30)
-
-[node name="RayDownRight" type="RayCast2D" parent="."]
-target_position = Vector2(30, 30)
-
-[node name="RayUpLeft" type="RayCast2D" parent="."]
-target_position = Vector2(-30, -30)
-
-[node name="RayDownLeft" type="RayCast2D" parent="."]
-target_position = Vector2(-30, 30)

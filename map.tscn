@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cfuf2ltkcue45" path="res://Assets/Fruits/rubber_fruit.tscn" id="2_8lh4o"]
 [ext_resource type="PackedScene" uid="uid://b3uyy7iycihu1" path="res://Assets/swords/sword.tscn" id="3_i55ms"]
 [ext_resource type="PackedScene" uid="uid://dxcy0oep5nwlg" path="res://Character/ai_ennemy.tscn" id="4_n6xwi"]
-[ext_resource type="PackedScene" path="res://wall.tscn" id="5_xcm2p"]
+[ext_resource type="PackedScene" uid="uid://b8x2h45vua1hd" path="res://wall.tscn" id="5_xcm2p"]
 
 [node name="Map" type="Node2D"]
 

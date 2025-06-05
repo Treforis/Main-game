@@ -10,7 +10,7 @@ var current_weapon_type = ""
 var current_weapon_description = ""
 
 var player_ref = null
-
+var current_attack_data = ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
