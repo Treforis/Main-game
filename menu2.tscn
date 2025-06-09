@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvjqnpokcwjux"]
+
+[ext_resource type="Script" path="res://menu2.gd" id="1_mmvf1"]
+[ext_resource type="Texture2D" path="res://menu2.png" id="2_jqwoe"]
+[ext_resource type="Texture2D" path="res://undo.png" id="3_toswj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25mpp"]
+size = Vector2(312, 85.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47w1m"]
+size = Vector2(511, 71)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7o7a2"]
+size = Vector2(91, 77)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_mmvf1")
+
+[node name="2ndmenu" type="Area2D" parent="."]
+
+[node name="Menu2i" type="Sprite2D" parent="2ndmenu"]
+position = Vector2(574, 326)
+scale = Vector2(0.574219, 0.421875)
+texture = ExtResource("2_jqwoe")
+
+[node name="Play" type="CollisionShape2D" parent="2ndmenu"]
+position = Vector2(583, 143.75)
+shape = SubResource("RectangleShape2D_25mpp")
+
+[node name="areasett" type="Area2D" parent="."]
+
+[node name="gosettings" type="CollisionShape2D" parent="areasett"]
+position = Vector2(576.5, 247.5)
+shape = SubResource("RectangleShape2D_47w1m")
+
+[node name="areaundo" type="Area2D" parent="."]
+
+[node name="Undo" type="Sprite2D" parent="areaundo"]
+position = Vector2(803, 45)
+scale = Vector2(0.233224, 0.259804)
+texture = ExtResource("3_toswj")
+
+[node name="colundo" type="CollisionShape2D" parent="areaundo"]
+position = Vector2(807, 45.5)
+shape = SubResource("RectangleShape2D_7o7a2")

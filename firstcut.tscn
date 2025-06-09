@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgfrl6fcntfva"]
+
+[ext_resource type="VideoStream" path="res://ezgif-6aa9064101f761.ogv" id="1_eqyp5"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = -332.0
+offset_top = -269.0
+offset_right = 1588.0
+offset_bottom = 819.0
+stream = ExtResource("1_eqyp5")
+autoplay = true
