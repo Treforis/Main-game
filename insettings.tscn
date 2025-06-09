@@ -1,8 +1,16 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=5 format=3 uid="uid://b6anwxnpn5th8"]
 
 [ext_resource type="Texture2D" path="res://settings.png" id="1_rq2nb"]
 [ext_resource type="Script" path="res://insidesett.gd" id="1_xalxr"]
 [ext_resource type="Texture2D" path="res://x.webp" id="2_ypasr"]
+=======
+[gd_scene load_steps=5 format=3 uid="uid://bml8iqv7xxv6c"]
+
+[ext_resource type="Texture2D" uid="uid://cuwcmucm87ksa" path="res://settings.png" id="1_rq2nb"]
+[ext_resource type="Script" path="res://insidesett.gd" id="1_xalxr"]
+[ext_resource type="Texture2D" uid="uid://ddxfgn8sgkwdk" path="res://x.webp" id="2_ypasr"]
+>>>>>>> Stashed changes
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s10iq"]
 radius = 80.8954

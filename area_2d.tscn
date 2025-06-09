@@ -1,8 +1,16 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=6 format=3 uid="uid://d3feel0bj8isc"]
 
 [ext_resource type="Script" path="res://control.gd" id="1_yv5m5"]
 [ext_resource type="Texture2D" path="res://menu.png" id="2_wi0vr"]
 [ext_resource type="Texture2D" path="res://quiti.png" id="3_cp04b"]
+=======
+[gd_scene load_steps=6 format=3 uid="uid://bbtnqp4igwfo"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_yv5m5"]
+[ext_resource type="Texture2D" uid="uid://d3gjmelra8qo5" path="res://menu.png" id="2_wi0vr"]
+[ext_resource type="Texture2D" uid="uid://dmc41baboxkxt" path="res://quiti.png" id="3_cp04b"]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ge50w"]
 size = Vector2(364.223, 90.6575)

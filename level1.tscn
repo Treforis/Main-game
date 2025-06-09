@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=11 format=3 uid="uid://q2voxknuchn"]
 
 [ext_resource type="Texture2D" path="res://ChatGPT Image May 1, 2025, 10_28_28 AM.png" id="1_44bul"]
@@ -6,6 +7,16 @@
 [ext_resource type="Texture2D" path="res://questmaster.png" id="4_r4ftr"]
 [ext_resource type="Texture2D" path="res://pixel-speech-bubble.png" id="5_uq85m"]
 [ext_resource type="Texture2D" path="res://quest1st.png" id="6_6g5ij"]
+=======
+[gd_scene load_steps=11 format=3 uid="uid://b80fm3o82b3ci"]
+
+[ext_resource type="Texture2D" uid="uid://be8q3wivpf1ad" path="res://ChatGPT Image May 1, 2025, 10_28_28 AM.png" id="1_44bul"]
+[ext_resource type="Script" path="res://level_1.gd" id="1_v304x"]
+[ext_resource type="Texture2D" uid="uid://ddxfgn8sgkwdk" path="res://x.webp" id="3_85s0q"]
+[ext_resource type="Texture2D" uid="uid://co56j1vur8sra" path="res://questmaster.png" id="4_r4ftr"]
+[ext_resource type="Texture2D" uid="uid://v0r6j4iscwfy" path="res://pixel-speech-bubble.png" id="5_uq85m"]
+[ext_resource type="Texture2D" uid="uid://yadhuklle6hy" path="res://quest1st.png" id="6_6g5ij"]
+>>>>>>> Stashed changes
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vb03g"]
 radius = 40.2244
@@ -54,6 +65,10 @@ scale = Vector2(0.257578, 0.31174)
 texture = ExtResource("5_uq85m")
 
 [node name="aq1" type="Area2D" parent="."]
+<<<<<<< Updated upstream
+=======
+visible = false
+>>>>>>> Stashed changes
 position = Vector2(579.5, 324.5)
 scale = Vector2(0.751953, 0.629883)
 

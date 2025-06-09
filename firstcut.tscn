@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=2 format=3 uid="uid://bgfrl6fcntfva"]
+=======
+[gd_scene load_steps=2 format=3 uid="uid://cbfou4hggw6nu"]
+>>>>>>> Stashed changes
 
 [ext_resource type="VideoStream" path="res://ezgif-6aa9064101f761.ogv" id="1_eqyp5"]
 

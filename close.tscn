@@ -1,7 +1,14 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=3 format=3 uid="uid://c8ow77jqnp05w"]
 
 [ext_resource type="Texture2D" path="res://firstcut2.png" id="1_j3xmk"]
 [ext_resource type="Texture2D" path="res://ship1-removebg-preview.png" id="2_oe8kt"]
+=======
+[gd_scene load_steps=3 format=3 uid="uid://ccc0wbamttbt0"]
+
+[ext_resource type="Texture2D" uid="uid://bonraqhytbkdq" path="res://firstcut2.png" id="1_j3xmk"]
+[ext_resource type="Texture2D" uid="uid://b8d25w73wq2ac" path="res://ship1-removebg-preview.png" id="2_oe8kt"]
+>>>>>>> Stashed changes
 
 [node name="Node2D" type="Node2D"]
 
